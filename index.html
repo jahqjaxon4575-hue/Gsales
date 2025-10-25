@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>G.sales</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#072A4F"/>
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <img src="icons/icon-192.png" alt="G.sales" class="logo">
+        <h1>G.sales</h1>
+      </div>
+      <div class="status-wrap">
+        <div class="status" id="networkStatus">Offline</div>
+        <div class="last-sync" id="lastSync">Last sync: —</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="add-sale">
+        <h2>Record Sale</h2>
+        <form id="saleForm">
+          <div class="row"><label>Item</label><input id="item" required placeholder="e.g., Brake pads"></div>
+          <div class="row"><label>Quantity</label><input id="qty" type="number" min="1" value="1" required></div>
+          <div class="row"><label>Price (each)</label><input id="price" type="number" step="0.01" min="0" value="0.00" required></div>
+          <div class="actions">
+            <button type="submit" class="btn">Save</button>
+            <button type="button" id="syncBtn" class="btn outline">Sync Now</button>
+            <a class="btn outline" href="activity.html">📋 Activity Log</a>
+          </div>
+        </form>
+      </section>
+
+      <section class="sales-list">
+        <h2>Sales (local)</h2>
+        <div id="salesContainer">Loading…</div>
+      </section>
+    </main>
+
+    <footer>
+      <small>G.sales — Navy theme • Works offline • IndexedDB storage</small>
+    </footer>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>

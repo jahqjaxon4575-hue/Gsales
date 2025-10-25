@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>G.sales — Activity Log</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#072A4F"/>
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <a href="index.html" class="back">← Back to Dashboard</a>
+        <h1>Activity Log</h1>
+      </div>
+      <div class="status" id="networkStatus">Offline</div>
+    </header>
+
+    <main>
+      <section class="log-list">
+        <div class="log-controls">
+          <button id="exportCsv" class="btn">📤 Export CSV</button>
+          <button id="clearLogs" class="btn outline">🧹 Clear Logs</button>
+        </div>
+        <div class="table-wrap">
+          <table id="logTable">
+            <thead><tr><th>Event</th><th>Description</th><th>Timestamp</th></tr></thead>
+            <tbody id="logBody"><tr><td colspan="3">Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>G.sales — Activity Log</small>
+    </footer>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
